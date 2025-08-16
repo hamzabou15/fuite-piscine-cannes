@@ -2,13 +2,13 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Fuite Piscine Expert",
-  "image": "https://fuite-piscine-expert.fr/images/fuite-piscine-nice.webp",
+  "image": "https://fuite-piscine-expert.fr/images/fuite-piscine-cannes.webp",
   "url": "https://fuite-piscine-expert.fr",
-  "telephone": "+33647572021",
+  "telephone": "+33756935200",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10 Rue Masséna",
-    "addressLocality": "Nice",
+    "addressLocality": "Cannes",
     "postalCode": "06000",
     "addressCountry": "FR"
   },
@@ -33,11 +33,11 @@
       "closes": "23:59"
     }
   ],
-  "description": "Spécialiste de la détection de fuites piscine à Nice. Intervention rapide avec matériel professionnel : caméra, gaz traceur, test de pression. Disponible 7j/7.",
+  "description": "Spécialiste de la détection de fuites piscine à Cannes. Intervention rapide avec matériel professionnel : caméra, gaz traceur, test de pression. Disponible 7j/7.",
   "priceRange": "€€",
   "paymentAccepted": "Cash, Credit Card",
   "areaServed": {
     "@type": "Place",
-    "name": "Nice et alentours"
+    "name": "Cannes et alentours"
   }
 }

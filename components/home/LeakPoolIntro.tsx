@@ -1,117 +1,67 @@
-"use client";
-
 import Image from "next/image";
-import { Phone } from "lucide-react";
-import Link from "next/link";
-import { Button } from "../ui/button";
-import Head from "next/head";
 
 export default function LeakPoolIntro() {
   return (
-    <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Fuite Piscine Nice Expert",
-              "image": "https://fuitepiscinenice-expert.fr/images/og-fuite-piscine.jpg",
-              "url": "https://fuitepiscinenice-expert.fr",
-              "telephone": "+33612345678",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "10 Rue Masséna",
-                "addressLocality": "Nice",
-                "postalCode": "06000",
-                "addressCountry": "FR"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 43.7031,
-                "longitude": 7.2661
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-                  ],
-                  "opens": "00:00",
-                  "closes": "23:59"
-                }
-              ],
-              "description":
-                "Spécialistes en détection de fuite de piscine à Nice : liner, coque, canalisation, skimmer. Intervention rapide, devis gratuit, rapport en 48h sans vider le bassin.",
-              "priceRange": "€€",
-              "paymentAccepted": "Cash, Credit Card",
-              "areaServed": {
-                "@type": "Place",
-                "name": "Nice et Alpes-Maritimes (06)"
-              }
-            })
-          }}
-        />
-      </Head>
-
-      <section className="py-20 max-w-7xl mx-auto px-6 md:px-16">
-        <div className="flex items-center gap-20 justify-between flex-col lg:flex-row">
-          {/* Texte gauche */}
-          <div className="lg:w-[45%] w-full sticky top-20 left-0 max-lg:relative max-lg:top-0">
-            <p className="uppercase text-sm text-gray-600 font-semibold tracking-widest mb-2">
-              Recherche fuite piscine à Nice – Expert local
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-pool-dark)] mb-4 leading-tight">
-              Détection de fuite piscine à Nice sans casse ni tracas
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#114877] mb-6">
+              Expertise en Détection de Fuite de Piscine à Cannes
             </h2>
-            <p className="text-lg text-[#4A5568] mb-6">
-              Vous constatez une baisse anormale du niveau d’eau ? Notre équipe spécialisée à Nice détecte rapidement avec des techniques non destructives : électro-acoustique, caméra endoscopique, fluorescéine, gaz traceur, test de pression… pour localiser précisément la fuite liner, coque, canalisation ou pièce à sceller.
+            <p className="text-lg text-gray-700 mb-6">
+              Une fuite dans votre piscine peut causer des dégâts considérables et augmenter votre consommation d&apos;eau de manière significative. Notre équipe d&apos;experts intervient rapidement avec des technologies de pointe pour localiser et réparer la fuite sans destruction.
             </p>
-            <p className="text-sm text-gray-600 mb-8">
-              Devis gratuit sous 24 h, rapport complet sous 48 h, et garantie de résultat ou vous ne payez rien. Interventions sur tout Nice et les Alpes‑Maritimes 06.
+            <p className="text-lg text-gray-700 mb-8">
+              Grâce à notre matériel professionnel (caméra thermique, gaz traceur, endoscopie), nous identifions avec précision l&apos;origine de la fuite, qu&apos;elle se situe dans le liner, la coque, les canalisations ou le système de filtration.
             </p>
-            <div className="flex items-center gap-6 flex-col sm:flex-row">
-              <Link href="/recherche-de-fuite-piscine-nice">
-                <Button
-                  size="lg"
-                  className="bg-[var(--color-pool-primary)] text-white hover:bg-[var(--color-pool-dark)] transition duration-200"
-                >
-                  En savoir plus
-                </Button>
-              </Link>
+            <div className="flex flex-wrap gap-4">
               <a
-                href="tel:0612345678"
-                className="flex items-center gap-2 text-[#114877] font-medium"
+                href="/recherche-fuite-piscine-cannes"
+                className="bg-[#02BAD6] hover:bg-[#028EAB] text-white font-bold py-3 px-6 rounded-lg transition"
               >
-                <div className="p-3 rounded-full bg-[#5BC0BE]/15">
-                  <Phone className="w-5 h-5 text-[#114877]" />
-                </div>
-                <span>06 12 34 56 78</span>
+                En savoir plus sur notre méthode
+              </a>
+              <a
+                href="/contact"
+                className="bg-transparent border-2 border-[#114877] text-[#114877] font-bold py-3 px-6 rounded-lg hover:bg-[#114877] hover:text-white transition"
+              >
+                Demander un diagnostic
               </a>
             </div>
           </div>
 
-          {/* Image droite */}
-          <div className="relative lg:w-[50%] w-full flex flex-col gap-6">
-            <Image
-              src="/images/piscine-mainten-nice.webp"
-
-              alt="Recherche de fuite piscine à Nice"
-              className="object-cover w-full rounded-lg shadow-lg"
-              width={600}
-              height={500}
-            />
-            <Image
-              src="/images/recherche-de-fuite-de-piscine-nice.webp"
-              alt="Expert détection fuite piscine à Nice"
-              className="object-cover w-full rounded-lg shadow-xl"
-              width={600}
-              height={500}
-            />
+          <div
+            className="relative"
+          >
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center">
+                <Image
+                  src={"/images/detection-fuite-piscine.webp"}
+                  width={500}
+                  height={500}
+                  alt="détection de fuite"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-[#114877] text-white p-6 rounded-xl shadow-lg w-3/4">
+                <h3 className="text-xl font-bold mb-2">Urgence Fuite Piscine?</h3>
+                <p className="mb-4">Nous intervenons en moins de 2h sur Cannes et ses environs</p>
+                <a
+                  href="tel:0612345678"
+                  className="bg-[#FFD700] hover:bg-[#FFC107] text-[#114877] font-bold py-2 px-4 rounded-lg flex items-center w-max"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  +33756935200
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

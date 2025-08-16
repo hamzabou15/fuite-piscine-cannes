@@ -1,62 +1,70 @@
-"use client";
-
 import Image from "next/image";
-import { Phone } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 export default function Intro() {
     return (
-        <section className="h-auto py-40">
-            <div className="container h-auto mx-auto flex items-center gap-40 justify-between max-lg:flex-col-reverse">
-                {/* Image côté droit */}
-                <div className="relative w-[35%] h-[400px] max-lg:w-full max-lg:grid grid-cols-2 max-lg:gap-6 max-sm:grid-cols-1 max-sm:h-auto">
-                    <Image
-                        src="/images/Fuite-piscine-canalisation-nice.Webp"
-                        alt="Expert recherche fuite piscine Nice"
-                        className="object-cover w-full h-full mt-[-60px] max-lg:mt-0"
-                        width={600}
-                        height={500}
-                    />
-                    <Image
-                        src="/images/reparation-piscine-beton-nice.webp"
-                        alt="Expert fuite piscine à Nice"
-                        className="absolute inset-0 w-full h-full object-cover left-[150px] top-8 max-lg:relative max-lg:left-auto max-lg:top-0"
-                        width={600}
-                        height={500}
-                    />
+        <section className="py-16 md:py-24">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="relative">
+                    <div className="relative rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                        <Image
+                            src="/images/expert-fuite-piscine-canalisation-cannes.webp"
+                            alt="Expert recherche fuite piscine Cannes"
+                            width={800}
+                            height={600}
+                            className="object-cover w-full h-[450px]"
+                        />
+                    </div>
+                    <div className="absolute -bottom-6 -right-6 bg-[#114877] text-white py-3 px-6 rounded-lg shadow-lg">
+                        <span className="font-bold">Depuis 1999</span>
+                        <p className="text-sm">au service des Cannois</p>
+                    </div>
                 </div>
-                {/* Texte côté gauche */}
-                <div className="w-[40%] max-lg:w-full flex flex-col max-md:items-center">
-                    <p className="uppercase text-sm text-gray-600 font-semibold tracking-widest mb-2">
-                        Fuite piscine expert à Nice – Intervention rapide
-                    </p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-pool-dark)] mb-4 leading-tight max-md:text-center">
-                        Votre spécialiste en recherche de fuite piscine, sans casse ni vidange
+                
+                <div className="flex flex-col">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#114877] mb-6 leading-tight">
+                        Votre expert en détection de fuite <span className="text-[#02BAD6]">sans casse</span> à Cannes
                     </h2>
-                    <p className="text-lg text-[var(--color-pool-muted)] mb-6 max-md:text-center">
-                        Expert en détection non destructive sur piscines coque, liner ou béton, nous localisons les fuites (skimmers, canalisations, revêtements) avec des techniques avancées : inspection vidéo, test sous pression, colorants fluorescents ou détection acoustique. Intervention fiable et professionnelle dans tout le département des Alpes‑Maritimes.
+                    
+                    <div className="space-y-4 text-[#222626] mb-8">
+                        <p className="flex items-start">
+                            <span className="text-[#FFD700] mr-2 font-bold">✓</span>
+                            <span>Spécialistes des piscines coque, liner et béton</span>
+                        </p>
+                        <p className="flex items-start">
+                            <span className="text-[#FFD700] mr-2 font-bold">✓</span>
+                            <span>Technologies de pointe : caméra endoscopique, gaz traceur</span>
+                        </p>
+                        <p className="flex items-start">
+                            <span className="text-[#FFD700] mr-2 font-bold">✓</span>
+                            <span>Intervention rapide dans tout le 06</span>
+                        </p>
+                        <p className="flex items-start">
+                            <span className="text-[#FFD700] mr-2 font-bold">✓</span>
+                            <span>Réparations durables avec garantie écrite</span>
+                        </p>
+                    </div>
+                    
+                    <p className="text-lg text-[#222626] mb-8">
+                        Fondée en 1999, notre entreprise s&apos;est spécialisée dans la détection non destructive de fuites de piscines sur Cannes et sa région. 
+                        Notre équipe de techniciens certifiés maîtrise les dernières technologies pour localiser et réparer vos fuites sans démolition.
                     </p>
-                    <p className="text-sm text-gray-600 mb-8 max-md:text-center">
-                        Devis gratuit sous 24 h, rapport détaillé sous 48 h, et solutions ciblées (colmatage, chemisage, réparation sans casse).
-                    </p>
-                    <div className="flex items-center gap-6 flex-col sm:flex-row">
-                        <Link href="/recherche-de-fuite-piscine-nice">
-                            <Button
-                                size="lg"
-                                className="bg-[var(--color-pool-primary)] text-white hover:bg-[var(--color-pool-dark)] transition duration-200"
-                            >
-                                En savoir plus
+                    
+                    <div className="flex flex-wrap gap-4">
+                        <Link href="/services">
+                            <Button className="bg-[#114877] hover:bg-[#0a3352] text-white py-6 px-8 text-lg">
+                                Découvrir nos services
                             </Button>
                         </Link>
-                        <a
-                            href="tel:0612345678"
-                            className="flex items-center gap-2 text-[#114877] font-medium"
+                        <a 
+                            href="tel:+33756935200" 
+                            className="flex items-center gap-2 text-[#114877] font-bold py-6 px-6 border-2 border-[#114877] rounded-lg"
                         >
-                            <div className="p-3 rounded-full bg-[#5BC0BE]/15">
-                                <Phone className="w-5 h-5 text-[#114877]" />
-                            </div>
-                            <span>06 12 34 56 78</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            07 56 93 52 00
                         </a>
                     </div>
                 </div>

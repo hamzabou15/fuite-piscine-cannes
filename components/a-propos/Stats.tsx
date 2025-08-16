@@ -14,8 +14,8 @@ const StatsCard = () => {
     return (
         <section
             className='w-full h-auto py-12 xl:max-w-[1300px] m-auto'
-            id="chiffres-plomberie-nice"
-            aria-label="Statistiques sur les interventions de plomberie à Nice"
+            id="chiffres-plomberie-cannes"
+            aria-label="Statistiques sur les interventions de plomberie à Cannes"
         >
             <div className='flex items-start justify-between max-lg:flex-wrap max-lg:gap-y-6'>
                 {stats.map((stat, index) => (
@@ -101,15 +101,12 @@ const StatItem = ({
             >
                 {label}
             </span>
-            <motion.h1
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isVisible ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
+            <h1
                 className='text-[60px] leading-24 m-0 font-semibold text-[#222626] max-lg:text-[92px]'
                 aria-label={`${count} ${label}`}
             >
                 {count}
-            </motion.h1>
+            </h1>
         </div>
     );
 };

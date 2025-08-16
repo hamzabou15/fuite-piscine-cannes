@@ -1,112 +1,86 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
 
-export default function RechercheFuitePiscinePage() {
+export default function InfoSection() {
     return (
-        <main className="bg-white text-[#1b1e3f]">
-            {/* Hero */}
-            <section className="bg-[#114877] text-white py-16 px-6 md:px-16">
-                <div className="max-w-6xl mx-auto text-center space-y-6">
-                    <h1 className="text-4xl md:text-5xl font-extrabold">
-                        Détection de Fuite de Piscine à Nice
-                    </h1>
-                    <p className="text-lg md:text-xl">
-                        Intervention rapide, non destructive & efficace dans les Alpes-Maritimes
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-block bg-white text-[#114877] font-semibold px-8 py-3 rounded-md shadow hover:bg-gray-200 transition"
+        <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div
+
                     >
-                        Demander un diagnostic gratuit
-                    </Link>
-                </div>
-            </section>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#114877] mb-6">
+                            Questions Fréquentes sur les Fuites de Piscine
+                        </h2>
 
-            {/* Intro Section */}
-            <section className="py-16 px-6 md:px-16 bg-[#f7f9fa]">
-                <div className="max-w-6xl mx-auto space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Pourquoi faire appel à FuitePiscine Expert ?
-                    </h2>
-                    <p className="text-lg text-[var(--color-pool-muted)] leading-relaxed">
-                        Vous observez une perte d’eau anormale dans votre piscine ? Il est possible qu’une fuite soit en cause. Nos experts interviennent rapidement pour diagnostiquer et localiser l’origine du problème à l’aide de technologies avancées, sans endommager votre bassin.
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 text-lg">
-                        <li>Localisation précise de la fuite</li>
-                        <li>Méthodes non destructives</li>
-                        <li>Diagnostic rapide et fiable</li>
-                        <li>Intervention dans tout le 06</li>
-                    </ul>
-                </div>
-            </section>
+                        <div className="space-y-6">
+                            {[
+                                {
+                                    question: "Comment détecter une fuite dans ma piscine?",
+                                    answer: "Les signes courants incluent une baisse anormale du niveau d'eau, des factures d'eau élevées, des zones humides autour de la piscine ou une difficulté à maintenir l'équilibre chimique."
+                                },
+                                {
+                                    question: "Combien coûte une recherche de fuite?",
+                                    answer: "Le coût dépend de la complexité de la recherche. Nous proposons un diagnostic initial gratuit par téléphone, puis un devis précis après évaluation sur place."
+                                },
+                                {
+                                    question: "Faut-il vider la piscine pour réparer une fuite?",
+                                    answer: "Dans la plupart des cas, non. Nos techniques de réparation sous l'eau permettent d'intervenir sans vidange, sauf dans certaines situations particulières."
+                                }
+                            ].map((faq, index) => (
+                                <div key={index} className="border-b border-gray-200 pb-6">
+                                    <h3 className="text-xl font-bold text-[#02BAD6] mb-2">{faq.question}</h3>
+                                    <p className="text-gray-700">{faq.answer}</p>
+                                </div>
+                            ))}
+                        </div>
 
-            {/* Méthodes de détection */}
-            <section className="py-16 px-6 md:px-16 bg-white">
-                <div className="max-w-6xl mx-auto space-y-10">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Nos méthodes de détection de fuite
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-10">
-                        <div>
-                            <Image
-                                src="/images/piscine-fuite-sur-nice.webp"
-                                alt="Gaz traceur piscine"
-                                width={600}
-                                height={400}
-                                className="rounded-lg shadow-md w-full h-auto"
-                            />
-                        </div>
-                        <div className="space-y-4  text-lg">
-                            <p className="text-[var(--color-pool-muted)]">
-                                Nos techniciens utilisent des technologies de pointe telles que :
-                            </p>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Gaz traceur</li>
-                                <li>Caméra thermique</li>
-                                <li>Colorants traceurs</li>
-                                <li>Inspection par caméra endoscopique</li>
-                            </ul>
-                            <p>
-                                Ces méthodes permettent de détecter les fuites dans les canalisations, skimmers, bonde de fond ou liner sans casser ni démonter.
-                            </p>
-                        </div>
+                        {/* <div className="mt-8">
+                            <a
+                                href="/faq"
+                                className="inline-flex items-center text-[#114877] font-bold hover:text-[#02BAD6] hover:underline"
+                            >
+                                Voir toutes les questions fréquentes
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </a>
+                        </div> */}
+                    </div>
+
+                    <div
+
+                        className="bg-gradient-to-br from-[#114877] to-[#02BAD6] text-white rounded-xl p-8"
+                    >
+                        <h3 className="text-2xl font-bold mb-6">Zone d&apos;Intervention</h3>
+                        <p className="mb-6">Nous intervenons dans tout le département des Alpes-Maritimes (06), avec un service prioritaire sur Cannes et ses environs.</p>
+
+                        <ul className="columns-2 gap-8 mb-6">
+                            {[
+                                "Cannes", "Antibes", "Nice", "Grasse",
+                                "Mandelieu", "Mougins", "Vallauris", "Le Cannet",
+                                "Théoule-sur-Mer", "Pégomas", "La Roquette-sur-Siagne",
+                                "Auribeau-sur-Siagne", "Mouans-Sartoux", "Valbonne", "Biot"
+                            ].map((city, index) => (
+                                <li key={index} className="flex items-center mb-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#FFD700] mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                    </svg>
+                                    {city}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <a
+                            href="/villages-desservis-06"
+                            className="inline-flex items-center bg-[#FFD700] hover:bg-[#FFC107] text-[#114877] font-bold py-2 px-4 rounded-lg"
+                        >
+                            Voir toutes les communes
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            </section>
-
-            {/* Localisation */}
-            <section className="py-16 px-6 md:px-16 bg-[#f7f9fa]">
-                <div className="max-w-6xl mx-auto space-y-8 text-lg">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Zones d’intervention
-                    </h2>
-                    <p className="text-[var(--color-pool-muted)]">
-                        Nous intervenons dans toutes les Alpes-Maritimes : Nice, Antibes, Cannes, Cagnes-sur-Mer, Grasse, Saint-Laurent-du-Var, Vence et alentours.
-                    </p>
-                    <p className="text-[var(--color-pool-muted)]">
-                        Notre équipe se déplace chez vous rapidement avec tout le matériel nécessaire pour un diagnostic complet.
-                    </p>
-                </div>
-            </section>
-
-            {/* Appel à l'action */}
-            <section className="py-16 px-6 md:px-16 bg-[#114877] text-white">
-                <div className="max-w-6xl mx-auto text-center space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                        Vous suspectez une fuite dans votre piscine ?
-                    </h2>
-                    <p className="text-lg text-[var(--color-pool-muted)]">
-                        Contactez FuitePiscine Expert pour une intervention rapide et fiable à Nice et dans le 06.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-block bg-white text-[#114877] font-semibold px-8 py-3 rounded-md shadow hover:bg-gray-200 transition"
-                    >
-                        Prendre rendez-vous
-                    </Link>
-                </div>
-            </section>
-        </main>
+            </div>
+        </section>
     );
 }

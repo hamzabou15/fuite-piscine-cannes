@@ -14,28 +14,28 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Fuite piscine à Nice – Détection et réparation experte | Expert",
+  title: "Fuite piscine à Cannes – Détection et réparation experte | Expert",
   description:
-    "Détection de fuite piscine à Nice : intervention rapide, technologie de pointe, réparation efficace. Contactez nos spécialistes en recherche de fuite non destructive.",
+    "Détection de fuite piscine à Cannes : intervention rapide, technologie de pointe, réparation efficace. Contactez nos spécialistes en recherche de fuite non destructive.",
   keywords: [
-    "fuite piscine Nice",
-    "détection fuite piscine Nice",
-    "réparation fuite piscine Nice",
-    "fuite bassin Nice",
-    "expert fuite piscine Nice",
+    "fuite piscine Cannes",
+    "détection fuite piscine Cannes",
+    "réparation fuite piscine Cannes",
+    "fuite bassin Cannes",
+    "expert fuite piscine Cannes",
   ],
   openGraph: {
-    title: "Fuite piscine à Nice – Détection et réparation experte | Expert",
+    title: "Fuite piscine à Cannes – Détection et réparation experte | Expert",
     description:
-      "Problème de fuite piscine à Nice ? Faites appel à notre équipe d'experts. Inspection caméra, test de pression, réparation ciblée. Service rapide et professionnel.",
-    url: "https://fuitepiscinenice-expert.fr/recherche-de-fuite-piscine-nice",
-    siteName: "Fuite Picine Nice Expert",
+      "Problème de fuite piscine à Cannes ? Faites appel à notre équipe d'experts. Inspection caméra, test de pression, réparation ciblée. Service rapide et professionnel.",
+    url: "https://fuitepiscinecannes-expert.fr/recherche-de-fuite-piscine-cannes",
+    siteName: "Fuite Picine Cannes Expert",
     images: [
       {
-        url: "/images/fuite-piscine-nice.webp",
+        url: "/images/fuite-piscine-cannes.webp",
         width: 1200,
         height: 630,
-        alt: "Détection de fuite piscine à Nice",
+        alt: "Détection de fuite piscine à Cannes",
       },
     ],
     locale: "fr_FR",
@@ -53,7 +53,7 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </head>
       <body className="antialiased bg-white text-[#1b1e3f]">
         <Header />

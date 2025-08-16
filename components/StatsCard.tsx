@@ -1,90 +1,67 @@
-"use client";
+'use client'
 
-import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const StatsCard = () => {
-  const stats = [
-    { value: 99, label: "Taux de détection des fuites garanti %" },
-    { value: 48, label: "Rapport et devis envoyés sous 48 h" },
-    { value: 10, label: "Années d’expérience à Nice et 06" },
-    { value: 5, label: "Méthodes de détection technologiques" },
-  ];
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  return (
-    <section
-      className="bg-white w-full px-16 max-sm:px-6 py-12 max-w-[1300px] mx-auto"
-      aria-label="Statistiques expertise fuite piscine Nice Alpes‑Maritimes"
-      id="chiffres-fuite-piscine-nice"
-    >
-      <div className="flex flex-wrap justify-between max-md:flex-col items-center ">
-        {stats.map((stat, idx) => (
-          <StatItem key={idx} {...stat} isLast={idx === stats.length - 1} />
-        ))}
-      </div>
-    </section>
-  );
+    const stats = [
+        { value: 2500, label: 'Piscines réparées' },
+        { value: 98, label: 'Taux de réussite' },
+        { value: 25, label: "Ans d'expérience" },
+        { value: 15, label: 'Techniciens experts' },
+    ];
+
+    return (
+        <section 
+            className='py-16 bg-gradient-to-r from-[#114877] to-[#02BAD6]  text-white'
+            ref={ref}
+        >
+            <div className='max-w-7xl mx-auto px-4 text-center'>
+                <h2 className='text-3xl md:text-4xl font-bold mb-16'>
+                    Notre impact dans le 06
+                </h2>
+                
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
+                    {stats.map((stat, index) => (
+                        <StatItem
+                            key={index}
+                            value={stat.value}
+                            label={stat.label}
+                            delay={index * 0.2}
+                            isInView={isInView}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 const StatItem = ({
-  value,
-  label,
-  isLast,
+    value,
+    label,
+    delay,
+    isInView
 }: {
-  value: number;
-  label: string;
-  isLast: boolean;
+    value: number;
+    label: string;
+    delay: number;
+    isInView: boolean;
 }) => {
-  const [count, setCount] = useState(0);
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.5 }
+    return (
+        <div
+            className='flex flex-col items-center'
+        >
+            <div className='text-4xl md:text-5xl lg:text-6xl font-bold mb-2'>
+                {isInView ? value : "0"}
+                {label === "Taux de réussite" && <span className="text-2xl">%</span>}
+            </div>
+            <div className='text-lg md:text-xl'>{label}</div>
+        </div>
     );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!visible) return;
-    const startTime = performance.now();
-    const duration = 2000;
-    const animate = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      setCount(Math.floor(progress * value));
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  }, [visible, value]);
-
-  return (
-    <div
-      ref={ref}
-      className={`flex flex-col items-center py-6 px-4 w-1/4 max-md:w-full ${
-        !isLast && "border-l border-dashed border-gray-300"
-      } max-sm:w-full`}
-    >
-      <motion.h1
-        initial={{ opacity: 0 }}
-        animate={{ opacity: visible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-6xl font-bold text-[#1b1e3f]"
-        aria-label={`${count} ${label}`}
-      >
-        {count}
-      </motion.h1>
-      <span className="text-lg text-center text-[#1b1e3f]">{label}</span>
-    </div>
-  );
 };
 
 export default StatsCard;

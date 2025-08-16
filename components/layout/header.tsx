@@ -1,128 +1,114 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
-import {
-    NavigationMenu,
-    NavigationMenuList,
-    NavigationMenuItem,
-    NavigationMenuTrigger,
-    NavigationMenuContent,
-    NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import { Phone, Search, Menu } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 import Image from "next/image";
+import { Phone, Menu, X } from "lucide-react";
+import { MdLocalPhone } from "react-icons/md";
+import { IoNewspaperOutline } from "react-icons/io5";
 
-export default function Header() {
+export default function HeaderWithCTA() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const services = [
-        { title: "Recherche de fuite piscine à Nice", href: "/recherche-de-fuite-piscine-nice" },
-        { title: "Diagnostic avant rénovation", href: "/services/diagnostic-avant-renovation" },
-        { title: "Chemisage canalisation piscine", href: "/services/chemisage-canalisation-piscine" },
-        { title: "Inspection vidéo et électro‑acoustique", href: "/services/inspection-video-electroacoustique" },
-        { title: "Test pression canalisations piscine", href: "/services/test-pression-canalisations" },
-        { title: "Détection fluorescéine / gaz traceur", href: "/services/detection-fluoresceine-gaz" },
-        { title: "Réparation sans casse immédiate", href: "/services/reparation-sans-casse" },
-        { title: "Devis sous 24h & rapport 48h", href: "/services/devis-rapport" },
+    const pages = [
+        { title: "Accueil", href: "/" },
+        { title: "À propos", href: "/a-propos" },
+        // { title: "Blog", href: "/blog" },
+        { title: "Recherche fuite piscine", href: "/recherche-fuite-piscine-cannes" },
+        { title: "Services", href: "/services" },
+        { title: "Urgence fuite piscine", href: "/urgence-fuite-piscine-cannes" },
+        { title: "Villages desservis", href: "/villages-desservis-06" },
+        { title: "Contact", href: "/contact" },
     ];
 
     return (
-        <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
-            <div className="max-w-6xl mx-auto px-16 py-3 flex items-center justify-between max-md:px-6">
-                <Link href="/">
-                    <Image src="/images/logo-fuites-piscine.png" alt="Fuite Piscine Expert Nice" width={200} height={50} className="h-[70px] object-cover" />
+        <header className="sticky top-0 z-50 shadow-lg bg-white">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-5">
+                {/* Logo */}
+                <Link href="/" className=" w-1/6">
+                    <Image
+                        src="/images/logo-fuite-pscine-cannes.png"
+                        alt="Fuite Piscine Expert Cannes"
+                        width={180}
+                        height={60}
+                        className="object-cover h-[50px] w-[200px] max-md:max-w-none"
+                    />
                 </Link>
 
-                <NavigationMenu className="hidden md:flex">
-                    <NavigationMenuList className="flex gap-8 text-sm font-medium text-[#1b1e3f]">
-                        <NavigationMenuItem>
-                            <NavigationMenuLink asChild>
-                                <Link href="/">Accueil</Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger>
-                                Services
-                            </NavigationMenuTrigger>
-                            <NavigationMenuContent className="bg-[#1b1e3f] text-white rounded-sm shadow-lg p-4 grid gap-2" style={{ width: "320px" }}>
-                                {services.map((item) => (
-                                    <NavigationMenuLink
-                                        key={item.href}
-                                        asChild
-                                        className="block px-3 py-2 text-sm hover:bg-[#02BAD6] hover:text-white rounded-sm"
-                                    >
-                                        <Link href={item.href}>{item.title}</Link>
-                                    </NavigationMenuLink>
-                                ))}
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink asChild>
-                                <Link href="/a-propos">À propos</Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink asChild>
-                                <Link href="/contact">Contact</Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                </NavigationMenu>
+                {/* Menu Desktop */}
+                <nav className="hidden  w-3/6 lg:flex items-center gap-6 gap-y-3 font-medium text-[#114877] flex-wrap justify-center">
+                    {pages.map((page) => (
+                        <Link
+                            key={page.href}
+                            href={page.href}
+                            className="hover:text-[#FFD700] transition-colors"
+                        >
+                            {page.title}
+                        </Link>
+                    ))}
+                </nav>
 
-                <div className="hidden md:flex items-center gap-4">
-                    <Link href="/recherche-de-fuite-piscine-nice" className="text-sm text-[#02BAD6] font-medium hover:underline">
-                        Recherche fuite piscine
-                    </Link>
-                    <Phone className="w-4 h-4 text-[#02BAD6]" />
-                    <a href="tel:+33647572021" className="text-sm text-[#02BAD6] font-medium">
-                        +33 647 57 20 21
-                    </a>
+                {/* Menu Mobile Button */}
+                <div className="lg:hidden">
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="text-[#114877]"
+                    >
+                        {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                    </button>
                 </div>
 
-                <div className="md:hidden">
-                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                        <Menu className="text-[#02BAD6] w-6 h-6" />
-                    </button>
+                {/* Contact Desktop */}
+                <div className="hidden lg:flex gap-4 w-2/6">
+                    {/* Téléphone */}
+                    <a
+                        href="tel:+33756935200"
+                        className="flex items-center text-[14px]   gap-2 bg-[#FFD700] text-[#114877] font-bold px-4 py-2 rounded-xl shadow-lg hover:bg-[#FFC107] transition transform hover:scale-105"
+                    >
+                        <Phone className="w-5 h-5" />
+                        <span className="flex w-full text-[12px]">
+                            +33 7 56 93 52 00
+
+                        </span>
+                    </a>
+
+                    {/* Devis */}
+                    <Link href="/contact" className="flex items-center gap-2 bg-[#02BAD6] text-white font-bold px-4 py-2 rounded-xl shadow-lg hover:bg-[#114877] transition transform hover:scale-105">
+                        <IoNewspaperOutline className="w-5 h-5" />
+                        Obtenir un devis
+                    </Link>
                 </div>
             </div>
 
-            {/* MENU MOBILE */}
+            {/* Menu Mobile */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-white border-t text-sm font-medium px-4 py-4 space-y-3">
-                    <Link href="/" className="block text-[#1b1e3f] hover:text-[#02BAD6]" onClick={() => setMobileMenuOpen(false)}>
-                        Accueil
-                    </Link>
+                <div className="lg:hidden bg-white px-6 py-6 space-y-4 text-[#114877] font-medium shadow-md animate-slideDown">
+                    {pages.map((page) => (
+                        <Link
+                            key={page.href}
+                            href={page.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block hover:text-[#FFD700] transition-colors"
+                        >
+                            {page.title}
+                        </Link>
+                    ))}
 
-                    <details className="group">
-                        <summary className="cursor-pointer text-[#1b1e3f] hover:text-[#02BAD6]">Services</summary>
-                        <div className="mt-2 pl-4 space-y-2">
-                            {services.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    className="block text-[#1b1e3f] hover:text-[#02BAD6]"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {item.title}
-                                </Link>
-                            ))}
-                        </div>
-                    </details>
-
-                    <Link href="/a-propos" className="block text-[#1b1e3f] hover:text-[#02BAD6]" onClick={() => setMobileMenuOpen(false)}>
-                        À propos
-                    </Link>
-                    <Link href="/contact" className="block text-[#1b1e3f] hover:text-[#02BAD6]" onClick={() => setMobileMenuOpen(false)}>
-                        Contact
-                    </Link>
-
-                    <div className="flex items-center gap-2 pt-4 border-t">
-                        <Phone className="w-4 h-4 text-[#02BAD6]" />
-                        <a href="tel:+33647572021" className="text-sm text-[#02BAD6] font-medium">
-                            +33 647 57 20 21
+                    <div className="flex flex-col gap-3 mt-4">
+                        {/* Téléphone */}
+                        <a
+                            href="tel:+33756935200"
+                            className="flex items-center gap-2 bg-[#FFD700] text-[#114877] font-bold px-4 py-3 rounded-xl shadow-lg hover:bg-[#FFC107] transition transform hover:scale-105"
+                        >
+                            <MdLocalPhone className="w-6 h-6" />
+                            +33 7 56 93 52 00
                         </a>
+
+                        {/* Devis */}
+                        <Link href="/contact" className="flex items-center gap-2 bg-[#02BAD6] text-white font-bold px-4 py-3 rounded-xl shadow-lg hover:bg-[#114877] transition transform hover:scale-105">
+                            <IoNewspaperOutline className="w-6 h-6" />
+                            Devis gratuit
+                        </Link>
                     </div>
                 </div>
             )}

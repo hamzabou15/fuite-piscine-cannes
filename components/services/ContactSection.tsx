@@ -40,7 +40,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
       >
-        <input type="hidden" name="_subject" value="Une nouvelle demande - Fuite Piscine sur Nice" />
+        <input type="hidden" name="_subject" value="Une nouvelle demande - Fuite Piscine sur Cannes" />
 
         <input type="text" name="Prénom" placeholder="Prénom" required className="border-b border-gray-300 focus:outline-none focus:border-[#13727B] py-2" />
         <input type="text" name="Nom" placeholder="Nom" required className="border-b border-gray-300 focus:outline-none focus:border-[#13727B] py-2" />

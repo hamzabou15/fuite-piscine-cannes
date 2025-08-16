@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://plombiernice-expert.fr",
+  siteUrl: "https://fuitepiscinecannes-expert.fr",
   generateRobotsTxt: true,
 };

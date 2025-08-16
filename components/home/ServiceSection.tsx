@@ -1,91 +1,88 @@
-"use client";
-
-import { Camera, Droplet, Wrench, Shield, Search, Hammer, FileText, Phone } from "lucide-react";
-import { Button } from "../ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
   {
-    title: "Détection de fuites non destructive",
-    icon: <Droplet className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Utilisation de techniques avancées pour localiser les fuites sans endommager votre piscine.",
+    title: "Recherche de Fuite",
+    description: "Localisation précise sans destruction avec technologies de pointe",
+    image: "/images/fuite-recherche.webp",
+    link: "/services/recherche-de-fuite"
   },
   {
-    title: "Inspection par caméra endoscopique",
-    icon: <Camera className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Examen visuel des zones difficiles d'accès pour identifier les fuites cachées.",
+    title: "Réparation Urgence",
+    description: "Intervention rapide 24h/24 pour colmater les fuites",
+    image: "/images/reparation-urgence.webp",
+    link: "/services/reparation-fuite"
   },
   {
-    title: "Test de pression des canalisations",
-    icon: <Wrench className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Vérification de l'étanchéité des canalisations pour détecter toute anomalie.",
+    title: "Contrôle Étanchéité",
+    description: "Diagnostic complet pour prévenir les problèmes futurs",
+    image: "/images/controle-etancheite.webp",
+    link: "/services/controle-etancheite"
   },
   {
-    title: "Recherche sur liner et coque",
-    icon: <Shield className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Inspection des revêtements pour identifier les microfissures ou décollements.",
-  },
-  {
-    title: "Détection sur skimmers et bonde de fond",
-    icon: <Search className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Examen des skimmers et bondes de fond pour détecter d'éventuelles fuites.",
-  },
-  {
-    title: "Recherche sur pièces à sceller",
-    icon: <Hammer className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Inspection des pièces à sceller telles que buses et projecteurs pour localiser les fuites.",
-  },
-  {
-    title: "Rapport d'intervention détaillé",
-    icon: <FileText className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Fourniture d'un rapport complet après chaque intervention, incluant diagnostics et recommandations.",
-  },
-  {
-    title: "Devis gratuit sous 24h",
-    icon: <Phone className="w-12 h-12 text-[var(--color-pool-primary)]" />,
-    description: "Obtenez un devis personnalisé et gratuit dans les 24 heures suivant votre demande.",
-  },
+    title: "Rénovation Piscine",
+    description: "Remise à neuf de votre piscine avec garantie",
+    image: "/images/renovation-piscine.webp",
+    link: "/services/renovation-piscine"
+  }
 ];
 
 export default function ServiceSection() {
   return (
-    <section className=" py-16 px-16 max-md:px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        <p className="uppercase text-sm tracking-widest text-[var(--color-pool-muted)] font-medium mb-2">
-          Nos services
-        </p>
-        <h2 className="text-4xl font-extrabold max-md:text-3xl text-[var(--color-pool-dark)] mb-12">
-          Spécialistes en détection de fuites de piscine à Nice
-        </h2>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#114877] mb-4">
+            Nos Services Experts
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Des solutions complètes pour tous vos problèmes de piscine à Cannes et dans les Alpes-Maritimes
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
             <div
-              key={idx}
-              className="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-xl hover:-translate-y-1 cursor-pointer group"
+              key={index}
+              className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              <div className="flex justify-center mb-4">
-                {service.icon}
+              <div className="relative h-48 w-full mb-4">
+                <Image
+                  src={service.image}
+                  alt={`Photo ${service.title}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-300 hover:scale-105"
+                />
               </div>
-              <h3 className="text-lg font-semibold text-[var(--color-pool-dark)] group-hover:text-[var(--color-pool-primary)] transition">
-                {service.title}
-              </h3>
-              <p className="text-sm text-[var(--color-pool-muted)] mt-2">{service.description}</p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-[#114877]">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+                <Link
+                  href={service.link}
+                  className="mt-4 inline-flex items-center text-[#02BAD6] font-medium hover:underline"
+                >
+                  En savoir plus
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12">
-          <Link href="/contact" className="inline-block">
-            <Button
-              size="lg"
-              variant="default"
-              className="bg-[var(--color-pool-primary)] text-white hover:bg-[var(--color-pool-dark)] transition duration-200"
-            >
-              Demandez votre devis gratuit
-            </Button>
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center bg-[#114877] hover:bg-[#02BAD6] text-white font-bold py-3 px-6 rounded-lg transition"
+          >
+            Découvrir tous nos services
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
           </Link>
-
         </div>
       </div>
     </section>

@@ -1,136 +1,80 @@
-"use client";
-
-import React, { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useSwipeable } from "react-swipeable";
-
-const testimonials = [
-  {
-    name: "Nathalie Dupont",
-    location: "Nice Centre (06)",
-    image: "/icons/user1.webp",
-    quote:
-      "Fuite piscine localisée sans casse en plein centre de Nice. Service rapide et professionnel. Détection par caméra et gaz traceur très efficace. Je recommande !",
-    color: "black",
-  },
-  {
-    name: "Olivier Martin",
-    location: "Cagnes-sur-Mer",
-    image: "/icons/user2.webp",
-    quote:
-      "Une équipe au top pour la recherche de fuite d’eau dans ma piscine enterrée. Résultat fiable, sans dégât sur la terrasse. Intervention en moins de 48h !",
-    color: "teal",
-  },
-  {
-    name: "Claire Lefèvre",
-    location: "Saint-Laurent-du-Var",
-    image: "/icons/user3.webp",
-    quote:
-      "J'avais une perte d’eau constante dans ma piscine. Diagnostic précis avec inspection endoscopique. Aucun besoin de casser. Très bon rapport qualité/prix.",
-    color: "teal",
-  },
-];
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-
-  const handleSwipe = (dir: "LEFT" | "RIGHT") => {
-    if (dir === "LEFT") {
-      setIndex((prev) => (prev + 1) % testimonials.length);
-    } else {
-      setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const testimonials = [
+    {
+      name: "Marie Dubois",
+      location: "Cannes, La Bocca",
+      img: '/icons/user2.webp',
+      text: "Service de recherche de fuite rapide et efficace. Le technicien a trouvé la fuite en moins d'une heure sans casser mon carrelage. Je recommande vivement!",
+      rating: 5
+    },
+    {
+      name: "Pierre Martin",
+      location: "Antibes",
+      img: '/icons/user1.webp',
+      text: "J'ai fait appel à eux pour la rénovation complète de ma piscine. Résultat impeccable, délais respectés et équipe très professionnelle.",
+      rating: 5
+    },
+    {
+      name: "Sophie Lambert",
+      img: '/icons/user3.webp',
+      location: "Mougins",
+      text: "Contrat d'entretien annuel depuis 2 ans. Ma piscine est toujours parfaite et je n'ai plus eu aucun problème de fuite. Service de qualité!",
+      rating: 5
     }
-  };
-
-  const handlers = useSwipeable({
-    onSwipedLeft: () => handleSwipe("LEFT"),
-    onSwipedRight: () => handleSwipe("RIGHT"),
-    trackMouse: true,
-  });
-
-  const visibleCards = 2;
-  const visibleTestimonials = testimonials.slice(index, index + visibleCards);
-
-  while (visibleTestimonials.length < visibleCards) {
-    visibleTestimonials.push(
-      testimonials[(visibleTestimonials.length + index) % testimonials.length]
-    );
-  }
+  ];
 
   return (
-    <section
-      className="w-full py-16 bg-white relative overflow-hidden px-16 max-md:px-6"
-      id="avis-clients-recherche-fuite-nice"
-      aria-label="Témoignages clients sur la recherche de fuite piscine à Nice"
-    >
-      <div className="text-center mb-12">
-        <p className="text-sm tracking-widest text-gray-500 uppercase">
-          Témoignages clients
-        </p>
-        <h2 className="text-4xl font-bold text-gray-900 mt-2">
-          Avis sur nos interventions de détection de fuite piscine à Nice
-        </h2>
-        <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-          Découvrez les témoignages authentiques de nos clients à Nice, Cagnes-sur-Mer, Saint-Laurent-du-Var et dans tout le 06. Nos interventions sont rapides, précises et sans casse.
-        </p>
-      </div>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#114877] mb-4">
+            Ils Nous Ont Fait Confiance
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Découvrez ce que disent nos clients satisfaits de nos services
+          </p>
+        </div>
 
-      <div
-        className="flex items-stretch justify-center gap-6 px-4 flex-wrap md:flex-nowrap cursor-grab active:cursor-grabbing select-none"
-        {...handlers}
-      >
-        {visibleTestimonials.map((t, i) => (
-          <Card
-            key={i}
-            className="bg-[#f4f7f8] rounded-2xl p-8 shadow-md w-full max-w-md transition-transform duration-500 ease-in-out"
-          >
-            <Quote
-              className={cn(
-                "w-6 h-6 mb-4",
-                t.color === "black" ? "text-black" : "text-[#02BAD6]"
-              )}
-            />
-            <p className="text-gray-700 text-lg leading-relaxed">{t.quote}</p>
-            <div className="flex items-center gap-4 mt-6">
-              <img
-                src={t.image}
-                alt={`${t.name}, ${t.location}`}
-                className="w-12 h-12 rounded-full object-cover"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-[#f8f9fa] rounded-xl p-8"
+            >
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-5 w-5 ${i < testimonial.rating ? 'text-[#FFD700]' : 'text-gray-300'}`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-6">&quot;{testimonial.text}&quot;</p>
               <div>
-                <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
+                <h3 className="font-bold text-lg text-[#114877]">{testimonial.name}</h3>
+                <p className="text-gray-600">{testimonial.location}</p>
               </div>
             </div>
-          </Card>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="flex justify-center mt-8 gap-2">
-        {testimonials.map((_, i) => (
-          <span
-            key={i}
-            className={cn(
-              "h-2 w-2 rounded-full",
-              i === index ? "bg-[#02BAD6]" : "bg-gray-300"
-            )}
-          ></span>
-        ))}
-      </div>
-
-      <div
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#02BAD6] text-white rounded-full p-2 cursor-pointer"
-        onClick={() => handleSwipe("RIGHT")}
-      >
-        <ChevronLeft size={16} />
-      </div>
-      <div
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#02BAD6] text-white rounded-full p-2 cursor-pointer"
-        onClick={() => handleSwipe("LEFT")}
-      >
-        <ChevronRight size={16} />
+        <div className="mt-12 text-center">
+          <a
+            href="/temoignages"
+            className="inline-flex items-center text-[#02BAD6] font-bold hover:underline"
+          >
+            Lire tous les témoignages
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

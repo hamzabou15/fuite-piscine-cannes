@@ -1,17 +1,17 @@
 export const insights = [
   {
-    slug: "fuite-piscine-coque-nice",
-    title: "Fuite d’eau piscine béton à Nice",
-    img: "/images/fuite-piscine-beton-nice.webp",
-    imgAlt: "Fuite d’eau piscine béton à Nice",
+    slug: "fuite-piscine-coque-cannes",
+    title: "Fuite d’eau piscine béton à Cannes",
+    img: "/images/fuite-piscine-beton-cannes.webp",
+    imgAlt: "Fuite d’eau piscine béton à Cannes",
     description: `
     <p class="mb-8 text-[#4d5562]">
-      Après avoir constaté une baisse anormale du niveau d’eau (par exemple 2 cm en 3 jours), nos techniciens interviennent rapidement à Nice pour une recherche de fuite sur une piscine en béton.
+      Après avoir constaté une baisse anormale du niveau d’eau (par exemple 2 cm en 3 jours), nos techniciens interviennent rapidement à Cannes pour une recherche de fuite sur une piscine en béton.
       Nous réalisons un contrôle précis des pièces à sceller (skimmer, buse de refoulement, bonde de fond), suivi d’une mise sous pression complète des réseaux.
     </p>
     <p class="mb-8 text-[#4d5562]">
       Si cette étape ne révèle rien, nous poursuivons avec des diagnostics complémentaire : tests en plongée, colorants fluorescéine ou gaz traceur selon le cas.
-      Dans un cas concret à Nice, la fuite avait été localisée avec précision sur le scellement de la bonde de fond sans casse ni destruction majeure.
+      Dans un cas concret à Cannes, la fuite avait été localisée avec précision sur le scellement de la bonde de fond sans casse ni destruction majeure.
     </p>
     <p class="mb-8 text-[#4d5562]">
       Diplômés spécialistes de la **recherche de fuite non destructive**, nous utilisons des équipements de pointe (caméra thermique, électro‑acoustique) pour localiser la fuite avec une précision au centimètre près.
@@ -26,16 +26,16 @@ export const insights = [
 
   },
   {
-    slug: "fuite-piscine-beton-nice",
-    title: "Fuite d’eau piscine béton à Nice",
-    img: "/images/fuite-piscine-beton-nice.webp",
-    imgAlt: "Fuite d’eau piscine béton à Nice",
+    slug: "fuite-piscine-beton-cannes",
+    title: "Fuite d’eau piscine béton à Cannes",
+    img: "/images/fuite-piscine-beton-cannes.webp",
+    imgAlt: "Fuite d’eau piscine béton à Cannes",
     description: `
      <p class="mb-8 text-[#4d5562]">
   Lors d'une baisse anormale du niveau d'eau (par exemple, une perte de 2 cm en 3 jours), il est essentiel de procéder à une inspection approfondie pour identifier la source de la fuite. Les zones critiques à examiner comprennent les pièces à sceller telles que les skimmers, les buses de refoulement et la bonde de fond. Une mise sous pression de ces éléments permet de détecter toute anomalie sans endommager la structure du bassin.
 </p>
 <p class="mb-8 text-[#4d5562]">
-  <strong>Fuite Piscine Nice</strong> a récemment localisé une fuite sur une bonde de fond d'une piscine en béton à Nice. Grâce à notre expertise et à l'utilisation d'équipements de pointe, nous avons pu identifier précisément l'origine de la fuite, permettant ainsi une réparation ciblée et efficace.
+  <strong>Fuite Piscine Cannes</strong> a récemment localisé une fuite sur une bonde de fond d'une piscine en béton à Cannes. Grâce à notre expertise et à l'utilisation d'équipements de pointe, nous avons pu identifier précisément l'origine de la fuite, permettant ainsi une réparation ciblée et efficace.
 </p>
 <p class="mb-8 text-[#4d5562]">
   Nos interventions sont réalisées sans destruction, garantissant une remise en état rapide et économique de votre piscine. Nous utilisons des techniques non invasives, telles que la mise en pression et l'utilisation de colorants traçants, pour localiser les fuites sans nécessiter de travaux de démolition.
@@ -44,7 +44,7 @@ export const insights = [
   De plus, nous fournissons un rapport détaillé de notre intervention, incluant des photos et des recommandations pour la réparation. Ce document peut être utilisé pour les démarches auprès de votre assurance ou pour planifier les travaux de réparation nécessaires.
 </p>
 <p class="mb-8 text-[#4d5562]">
-  Pour toute recherche de fuite sur piscine en béton à Nice, contactez <strong>Fuite Piscine Nice</strong> pour une intervention rapide, professionnelle et sans tracas.
+  Pour toute recherche de fuite sur piscine en béton à Cannes, contactez <strong>Fuite Piscine Cannes</strong> pour une intervention rapide, professionnelle et sans tracas.
 </p>
 
     `
@@ -52,7 +52,7 @@ export const insights = [
   {
     slug: "fuite-piscine-coque-peymeinade",
     title: "Recherche de fuite dans une piscine coque à Peymeinade (06)",
-    img: "/images/fuite-piscine-coque-nice.webp",
+    img: "/images/fuite-piscine-coque-cannes.webp",
     imgAlt: "Recherche de fuite dans une piscine coque à Peymeinade (06)",
     description: `
       <p class="mb-8  text-[#4d5562]">
@@ -68,7 +68,7 @@ export const insights = [
         Le rapport d’intervention remis inclut les étapes de localisation, plusieurs photos, et des recommandations techniques pour l’intervention de colmatage ou remplacement.
       </p>
       <p class="mb-8  text-[#4d5562]">
-        Intervention rapide sur Nice et tout le 06 (Valbonne, Antibes, Vallauris, Cannes…). Contactez-nous pour obtenir un devis gratuit ou planifier un diagnostic.  
+        Intervention rapide sur Cannes et tout le 06 (Valbonne, Antibes, Vallauris, Cannes…). Contactez-nous pour obtenir un devis gratuit ou planifier un diagnostic.  
       </p>
     `,
   },
@@ -112,7 +112,7 @@ export const insights = [
       Suite à cette localisation, nous avons réalisé les travaux de réparation ciblés pour rétablir l’étanchéité de la coque. Intervention rapide, sans destruction excessive, et axée sur la durabilité.
     </p>
     <p class="mb-8  text-base font-normal text-[var(--color-pool-muted)]">
-      Contactez-nous pour une intervention professionnelle sur votre piscine coque à Nice et dans les Alpes‑Maritimes : diagnostic prouvé, réparation précise et rapport complet pour vos démarches assurance ou suivi technique.
+      Contactez-nous pour une intervention professionnelle sur votre piscine coque à Cannes et dans les Alpes‑Maritimes : diagnostic prouvé, réparation précise et rapport complet pour vos démarches assurance ou suivi technique.
     </p>
   `
   }
@@ -120,11 +120,11 @@ export const insights = [
   {
     slug: "recherche-fuite-piscine-beton-antibes-biot",
     title: "Recherche de fuite d'eau sur piscine béton à Antibes près de Biot dans le 06",
-    img: "/images/fuite-piscine-coque-nice-expert.webp",
-    imgAlt: "Recherche de fuite d'eau sur piscine béton à Nice",
+    img: "/images/fuite-piscine-coque-cannes-expert.webp",
+    imgAlt: "Recherche de fuite d'eau sur piscine béton à Cannes",
     description: `
     <p class="mb-8  text-[#4d5562]">
-      Vous recherchez un professionnel pour la recherche de fuite sur votre <strong>piscine béton</strong> à <strong>Antibes</strong> ou <strong>Biot</strong> dans les <strong>Alpes‑Maritimes (06)</strong> ? L’entreprise Fuite Piscine Nice Expert intervient rapidement pour localiser précisément la fuite sans casse excessive.
+      Vous recherchez un professionnel pour la recherche de fuite sur votre <strong>piscine béton</strong> à <strong>Antibes</strong> ou <strong>Biot</strong> dans les <strong>Alpes‑Maritimes (06)</strong> ? L’entreprise Fuite Piscine Cannes Expert intervient rapidement pour localiser précisément la fuite sans casse excessive.
     </p>
     <p class="mb-8  text-[#4d5562]">
       Le client signalait une baisse du niveau du bac tampon d’environ <strong>1,5 cm par jour</strong>. Nous avons immédiatement procédé à une mise en pression de la bonde de fond du bac tampon et du réseau de refoulement pour identifier l’origine exacte du problème.
@@ -144,12 +144,12 @@ export const insights = [
   {
     slug: "recherche-fuite-piscine-coque-vallauris",
     title: "Recherche de fuite d'eau sur une piscine coque à Vallauris dans les Alpes Maritimes",
-    img: "/images/fuite-piscine-coque-expert-sur-nice.webp",
+    img: "/images/fuite-piscine-coque-expert-sur-cannes.webp",
     imgAlt: "Recherche de fuite d'eau sur une piscine coque à Vallauris dans les Alpes Maritimes",
     description: `
        <p class="mb-8  text-[#4d5562]">
 
-      L’entreprise <strong>Fuite Piscine Nice Expert</strong> a été appelée pour une recherche de fuite d’eau sur une piscine coque à <strong>Vallauris</strong>, située dans les <strong>Alpes Maritimes</strong>, où le niveau d’eau descendait rapidement.
+      L’entreprise <strong>Fuite Piscine Cannes Expert</strong> a été appelée pour une recherche de fuite d’eau sur une piscine coque à <strong>Vallauris</strong>, située dans les <strong>Alpes Maritimes</strong>, où le niveau d’eau descendait rapidement.
     </p>
        <p class="mb-8  text-[#4d5562]">
 
@@ -169,7 +169,7 @@ export const insights = [
     </p>
        <p class="mb-8  text-[#4d5562]">
 
-      Pour toute recherche de fuite sur piscine coque à Vallauris et dans les Alpes Maritimes, contactez <strong>Fuite Piscine Nice Expert</strong> pour une intervention rapide, un diagnostic précis et une réparation fiable.
+      Pour toute recherche de fuite sur piscine coque à Vallauris et dans les Alpes Maritimes, contactez <strong>Fuite Piscine Cannes Expert</strong> pour une intervention rapide, un diagnostic précis et une réparation fiable.
     </p>
   `
   },

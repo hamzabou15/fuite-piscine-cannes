@@ -1,81 +1,118 @@
-"use client";
-import { notFound, useParams } from "next/navigation";
-import Image from "next/image";
-import { services } from "@/lib/service";
-import ContactForm from "@/components/services/ContactSection";
+// app/services/[slug]/page.tsx
+import { notFound } from 'next/navigation';
+
+import { Metadata } from "next";
+import { services } from '@/lib/service';
+import ServiceDetailHero from '@/components/services/ServiceDetailHero';
+import ServiceContentSection from '@/components/services/ServiceContentSection';
+import ServiceBenefitsSection from '@/components/services/ServiceBenefitsSection';
+import ServiceProcessSection from '@/components/services/ServiceProcessSection';
+import ServiceFaqSection from '@/components/services/ServiceFaqSection';
+import ServiceCtaSection from '@/components/services/ServiceCtaSection';
 
 
+interface ServicesProps {
+  params: Promise<{ slug: string }>;
 
-export default function PipelinesPage() {
-  const { slug } = useParams();
-  const service = services.find((p) => p.slug === slug);
+}
 
-  if (!service) return notFound();
+export async function generateMetadata({ params }: ServicesProps) {
+  const { slug } = await params;
 
+  const service = services.find((s: { slug: string; }) => s.slug === slug);
+
+  if (!service) {
+    return {
+      title: "Service non trouvé",
+      description: "Le service demandé n'existe pas."
+    };
+  }
+
+  return {
+    title: `${service.title} | Fuite Piscine Cannes Expert`,
+    description: service.description,
+    keywords: [
+      ...service.title.toLowerCase().split(' '),
+      "Cannes",
+      "Alpes-Maritimes",
+      "service piscine",
+      "expert piscine"
+    ],
+    alternates: {
+      canonical: `https://fuitepiscinecannes-expert.fr/services/${service.slug}`,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      url: `https://fuitepiscinecannes-expert.fr/services/${service.slug}`,
+      images: [{
+        url: service.image,
+        width: 1200,
+        height: 630,
+        alt: service.alt,
+      }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.title,
+      description: service.description,
+      images: [service.image],
+    },
+  };
+}
+
+export default async function ServiceDetailPage({ params }: ServicesProps) {
+  const { slug } = await params;
+
+  const service = services.find(s => s.slug === slug);
+
+  if (!service) {
+    notFound();
+  }
+  const content = service.content || `
+    <h2>${service.title}</h2>
+    <p>Contenu détaillé en préparation. Nos experts préparent actuellement des informations complètes sur ce service.</p>
+    <p>En attendant, n'hésitez pas à nous contacter pour plus d'informations.</p>
+  `;
   return (
-    <main className="bg-gray-100 min-h-screen py-10">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8 p-6 max-lg:items-center">
-        <div className="md:col-span-2">
-          <Image
-            src={service.image}
-            alt={service.alt}
-            width={800}
-            height={500}
-            className="w-full h-auto max-h-[500px] object-cover rounded"
-          />
-          <h2 className="text-4xl font-bold max-lg:text-3xl mt-6 text-[#1b1e3f]">
-            {service.title}
-          </h2>
-          <p className="text-[#4d5562] mt-4">{service.description}</p>
+    <div>
+      <ServiceDetailHero
+        title={service.title}
+        description={service.description}
+        image={service.image}
+        alt={service.alt}
+      />
 
-          {service.child && (
-            <>
-              <h3 className="text-xl font-semibold mt-6 text-[#1b1e3f]">
-                {service.child.title1}
-              </h3>
-              <div
-                className="mt-2"
-                dangerouslySetInnerHTML={{ __html: service.child.description1 }}
-              />
-              <div className="flex gap-6 mt-6 max-lg:flex-col">
-                <Image
-                  className="mt-4 object-cover w-full max-lg:max-h-64"
-                  src={
-                    "/images/inspection-video-piscine.webp"
-                  }
-                  alt="Pipeline 1"
-                  width={300}
-                  height={200}
-                />
-                <Image
-                  className="mt-4 object-cover w-full max-lg:max-h-64"
-                  src={
+      <ServiceContentSection
+        content={service.content}
+      />
 
-                    "/images/fuite-piscine-sur-nice-repartaion.webp"
-                  }
-                  alt="Pipeline 2"
-                  width={300}
-                  height={200}
-                />
-              </div>
+      <ServiceBenefitsSection
+        title="Avantages de Notre Service"
+        benefits={service.benefits}
+      />
 
-              <h3 className="text-xl font-semibold mt-6 text-[#1b1e3f]">
-                {service.child.title2}
-              </h3>
-              <div
-                className="mt-2"
-                dangerouslySetInnerHTML={{
-                  __html: service.child.description2 ?? "",
-                }}
-              />
-            </>
-          )}
-        </div>
+      <ServiceProcessSection
+        title="Notre Processus d'Intervention"
+        steps={service.process}
+      />
 
-        <div className="min-h-[calc(100vh-40px)] sticky top-[100px] self-start bg-white p-6 max-lg:min-h-auto">
-          <ContactForm />
-        </div>
-      </div>
-    </main>
+      <ServiceFaqSection
+        title="Questions Fréquentes sur ce Service"
+        faqs={service.faqs}
+      />
+
+      <ServiceCtaSection
+        title={`Prêt pour un ${service.title.split(' ')[0].toLowerCase()} professionnel?`}
+        subtitle="Contactez-nous pour un diagnostic gratuit et sans engagement"
+        buttonText="Demander une intervention"
+      />
+    </div>
   );
+}
+
+export async function generateStaticParams() {
+  return services.map(service => ({
+    slug: service.slug,
+  }));
 }
