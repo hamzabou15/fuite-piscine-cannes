@@ -70,7 +70,7 @@ export default function InfoSection() {
                         </ul>
 
                         <a
-                            href="/villages-desservis-06"
+                            href="/Villes-desservis-06"
                             className="inline-flex items-center bg-[#FFD700] hover:bg-[#FFC107] text-[#114877] font-bold py-2 px-4 rounded-lg"
                         >
                             Voir toutes les communes

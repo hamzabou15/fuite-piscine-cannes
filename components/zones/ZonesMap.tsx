@@ -114,8 +114,8 @@ export default function ZonesMap({ title, description }: ZonesMapProps) {
           <h3 className="text-2xl font-bold text-[#114877] mb-4">Foire aux questions - Zones d&apos;intervention</h3>
           <div className="space-y-6">
             <div>
-              <h4 className="font-bold text-lg mb-2">Proposez-vous des interventions dans les villages perchés?</h4>
-              <p className="text-gray-600">Oui, nos techniciens sont équipés pour intervenir dans toutes les communes des Alpes-Maritimes, y compris les villages de montagne difficiles d&apos;accès comme Gourdon, Tourrettes-sur-Loup ou Saint-Paul-de-Vence.</p>
+              <h4 className="font-bold text-lg mb-2">Proposez-vous des interventions dans les Villes perchés?</h4>
+              <p className="text-gray-600">Oui, nos techniciens sont équipés pour intervenir dans toutes les communes des Alpes-Maritimes, y compris les Villes de montagne difficiles d&apos;accès comme Gourdon, Tourrettes-sur-Loup ou Saint-Paul-de-Vence.</p>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-2">Quels sont les frais de déplacement?</h4>

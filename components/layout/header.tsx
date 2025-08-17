@@ -17,7 +17,7 @@ export default function HeaderWithCTA() {
         { title: "Recherche fuite piscine", href: "/recherche-fuite-piscine-cannes" },
         { title: "Services", href: "/services" },
         { title: "Urgence fuite piscine", href: "/urgence-fuite-piscine-cannes" },
-        { title: "Villages desservis", href: "/villages-desservis-06" },
+        { title: "Villes desservis", href: "/Villes-desservis-06" },
         { title: "Contact", href: "/contact" },
     ];
 

@@ -1,4 +1,4 @@
-// app/villages-desservis-06/page.tsx
+// app/Villes-desservis-06/page.tsx
 import ZonesCta from "@/components/zones/ZonesCta";
 import ZonesHero from "@/components/zones/ZonesHero";
 import ZonesList from "@/components/zones/ZonesList";
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description: "Intervention dans tout le département 06 : Cannes, Antibes, Nice, Grasse, Mandelieu, Mougins, Vallauris et toutes les communes environnantes.",
   keywords: "intervention fuite piscine Alpes-Maritimes, recherche fuite piscine 06, technicien piscine Cannes région",
   alternates: {
-    canonical: "https://fuitepiscinecannes-expert.fr/villages-desservis-06",
+    canonical: "https://fuitepiscinecannes-expert.fr/Villes-desservis-06",
   },
 };
 
-export default function VillagesDesservis06() {
+export default function VillesDesservis06() {
   const communes = [
     "Cannes",
     "Antibes",
